@@ -1,10 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
-
-export type PokemonDocument = HydratedDocument<Pokemon>;
+import { Document } from 'mongoose';
 
 @Schema()
-export class Pokemon {
+export class Pokemon extends Document {
   @Prop({
     unique: true,
     index: true,
